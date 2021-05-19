@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:paddingStart="16dp"
+android:paddingLeft="16dp"
+android:paddingTop="16dp"
+android:paddingEnd="16dp">
+
+<ImageView
+    android:id="@+id/thumbnailImageView"
+    android:layout_width="110dp"
+    android:layout_height="110dp"
+    android:layout_marginBottom="16dp"
+    android:scaleType="center"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/storeName"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:maxLines="2"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:hint="카타르시스"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/thumbnailImageView"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:layout_marginTop="7dp"
+    android:id="@+id/piceTextView"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@+id/storeName"
+    app:layout_constraintTop_toBottomOf="@id/storeName" />
+
+<TextView
+    android:id="@+id/titlefood"
+    android:layout_width="0dp"
+
+    android:layout_height="wrap_content"
+
+    android:layout_marginTop="7dp"
+    android:textColor="@color/black"
+    android:textSize="15sp"
+    android:textStyle="bold"
+    android:fontFamily="@font/hana"
+    app:layout_constraintTop_toBottomOf="@id/piceTextView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@id/piceTextView" />
+
+<View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:background="@color/gray"
+    android:elevation="10dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

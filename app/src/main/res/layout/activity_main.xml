@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:orientation="vertical">
+     <TextView
+
+            android:id="@+id/topText"
+      android:shadowDx="10"
+         android:shadowDy="10"
+         android:shadowRadius="10"
+
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginTop="24dp"
+            android:background="#fff"
+            android:elevation="20dp"
+            android:fontFamily="@font/bamin"
+            android:gravity="center"
+            android:text="예약의 민족"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/topLayoutText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/topText" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- image of tuttle try -> x
+                <ImageView
+                    android:id="@+id/tuttle"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintEnd_toStartOf="@id/topText"
+                    app:layout_constraintBottom_toTopOf="@id/topLayout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/> -->
+
+
+        <TextView
+            android:id="@+id/topLayoutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+
+
+            android:fontFamily="@font/hana"
+            android:text="오늘의 Hot Place"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@id/topLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.083" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="전체보기 >"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@+id/topLayoutText"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/topLayoutSubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+
+            android:fontFamily="@font/bamin"
+            android:text="인기있는 장소로 식사해요(변경 문구)"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/topLayoutText"
+            app:layout_constraintTop_toBottomOf="@id/topLayoutText" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/topLayout"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="10dp"
+            android:elevation="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topLayoutSubText">
+
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+        <TextView
+            android:id="@+id/middleLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/bamin"
+            android:text="어디로 가시나요?"
+
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topLayout" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray"
+            android:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/middleLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/middleLayout" />
+
+
+        <TextView
+            android:id="@+id/user_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="15dp"
+
+            android:fontFamily="@font/bamin"
+            android:text="유저들의 리얼리뷰 Pick"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/listLayout" />
+
+        <TextView
+            android:id="@+id/sub_user_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/bamin"
+            android:text="방문자들이 남긴 솔직한 리뷰를 만나 보세요"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_pick" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray"
+            android:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/sub_user_pick" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/card"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sub_user_pick" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/card2"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@id/card"
+            app:layout_constraintTop_toBottomOf="@id/sub_user_pick">
+
+
+        </androidx.viewpager2.widget.ViewPager2>
+
+
+        <TextView
+
+            android:id="@+id/bottomLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/bamin"
+            android:text="놓치면 안되는 혜택 가득!"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card" />
+
+
+        <TextView
+            android:id="@+id/sub_bottomLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/bamin"
+            android:text="미식생활을 더욱 스마트하게 즐기세요"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottomLayout" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray"
+            android:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/sub_bottomLayout" />
+
+        <TextView
+
+            android:id="@+id/bottomLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/bamin"
+            android:text="놓치면 안되는 혜택 가득!"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card" />
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/lastcard"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sub_bottomLayout" />
+
+        <TextView
+            android:id="@+id/recommendation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/bamin"
+            android:text="상황별/주제별 BEST"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/recommendationLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastcard" />
+
+        <TextView
+            android:id="@+id/recommendationLine"
+
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray"
+            android:elevation="10dp"
+            app:layout_constraintTop_toBottomOf="@id/recommendation" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/recommendationCard"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommendation" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reservationButton"
+            android:layout_width="150dp"
+            android:layout_height="35sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/bamin"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="예약하러가기"
+            android:textSize="20sp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommendationCard" />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:text="111111"
+            android:id="@+id/myReservation"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/reservationButton"
+            app:layout_constraintTop_toTopOf="@id/reservationButton"
+            app:layout_constraintBottom_toBottomOf="@id/reservationButton"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="전체보기 >"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintHorizontal_bias="0.901"
+            app:layout_constraintStart_toEndOf="@+id/middleLayout"
+            app:layout_constraintTop_toBottomOf="@+id/topLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+</LinearLayout>

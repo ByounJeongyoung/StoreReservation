@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "407828139240",
+    "firebase_url": "https://swreservation-ad3a4-default-rtdb.firebaseio.com",
+    "project_id": "swreservation-ad3a4",
+    "storage_bucket": "swreservation-ad3a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407828139240:android:93fdbecc2ea3c4981e8d5d",
+        "android_client_info": {
+          "package_name": "com.jeongyoung.sw_reservation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407828139240-efif8fqnenbnscjddganlh249cqglcmc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvGFsH7xTtNbE-f_1KC_ZFM_RLDS5K-oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "407828139240-efif8fqnenbnscjddganlh249cqglcmc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
