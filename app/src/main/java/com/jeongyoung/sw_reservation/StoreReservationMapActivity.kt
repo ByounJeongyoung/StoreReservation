@@ -34,10 +34,7 @@ class StoreReservationMapActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mapView: MapView
     private lateinit var naverMap: NaverMap
 
-
-    val binding by lazy {  StoreReservationMapBinding.inflate(layoutInflater) }
-
-
+    val binding by lazy { StoreReservationMapBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -45,7 +42,6 @@ class StoreReservationMapActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView = findViewById(R.id.map_view)
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
-
     }
 
     override fun onStart() {
@@ -87,14 +83,13 @@ class StoreReservationMapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         naverMap = map
 
-        naverMap.maxZoom = 18.0  //용량 확보
+        //용량 확보
+        naverMap.maxZoom = 18.0
         naverMap.minZoom = 15.0
 
-        //시작위티 경기대 구글맵으로 경도 찾기기
+        //시작위치 고도리 위치로 네이버맵으로 경도 초기화
         val cameraUpdate = CameraUpdate.scrollTo(LatLng(37.29970341392781, 127.04282601032713))
         naverMap.moveCamera(cameraUpdate)
-
-
         marker(37.29970341392781, 127.04282601032713, "고도리")
     }
 

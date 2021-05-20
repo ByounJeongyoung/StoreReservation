@@ -22,32 +22,23 @@ class FragmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
-
         replaceFragment(homeFragment)
-
-
-
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> replaceFragment(homeFragment)
-               // R.id.location -> replaceFragment(locationFragment)
+                // R.id.location -> replaceFragment(locationFragment)
                 R.id.reservation -> replaceFragment(reservationFragment)
                 R.id.mypage -> replaceFragment(myPageFragment)
-
             }
             true
         }
-
     }
-
-    private fun replaceFragment(fragment: Fragment){
+//프래그먼트 대체 함수
+    private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .apply {
-                replace(R.id.FrameLayout,fragment)
+                replace(R.id.FrameLayout, fragment)
                 commit()
             }
     }
-
-
 }

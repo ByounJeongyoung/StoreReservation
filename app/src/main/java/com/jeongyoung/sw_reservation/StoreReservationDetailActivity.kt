@@ -22,8 +22,6 @@ import java.util.*
 class StoreReservationDetailActivity : AppCompatActivity() {
     private lateinit var articleDB: DatabaseReference
     private lateinit var reservationAdapter: ReservationAdapter
-
-
     private val reservationList = mutableListOf<ReservationModel>()
 
     private val listener = object : ChildEventListener {
@@ -44,10 +42,7 @@ class StoreReservationDetailActivity : AppCompatActivity() {
         }
 
         override fun onCancelled(error: DatabaseError) {
-
         }
-
-
     }
 
 
@@ -56,44 +51,37 @@ class StoreReservationDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
+        //데이터 중복 방지
         reservationList.clear()
-
+        //추가할 데이터 위치 설정
         articleDB = Firebase.database.reference.child(DBkey.DB_ARTICLES)
 
-
-
-        binding.button222.setOnClickListener {
+        //버튼 클릭시 데이터 추가 listener
+         binding.button222.setOnClickListener {
             articleDB.addChildEventListener(listener)
 
             val storeName = binding.nameEditText1.text.toString()
             val peopleNum = binding.nameEditText2.text.toString()
             val reservationModel1 = ReservationModel(storeName, peopleNum, 0)
 
-           /* val shared = getSharedPreferences("reservationInform", Context.MODE_PRIVATE)
-            val editor = shared.edit()
-
-            editor.putString("storeName",storeName)
-            editor.putString("peopleNum",peopleNum)
-            editor.apply()*/
-            //            val intent = Intent(this,StoreReservationActivity::class.java)
-            //      intent.putExtra("people",storeName)
-            //    intent.putExtra("peopleNum",peopleNum)
-
-
             articleDB.push().setValue(reservationModel1)
-
-
-            //     finish()
-
-            //articleDB.child("3번째").child("name").setValue(store)
-            //articleDB.child("last").child("people").setValue("100명")
-
-
         }
-
-
     }
-
-
 }
+
+
+/* val shared = getSharedPreferences("reservationInform", Context.MODE_PRIVATE)
+ val editor = shared.edit()
+
+ editor.putString("storeName",storeName)
+ editor.putString("peopleNum",peopleNum)
+ editor.apply()*/
+//            val intent = Intent(this,StoreReservationActivity::class.java)
+//      intent.putExtra("people",storeName)
+//    intent.putExtra("peopleNum",peopleNum)
+
+
+//     finish()
+
+//articleDB.child("3번째").child("name").setValue(store)
+//articleDB.child("last").child("people").setValue("100명")

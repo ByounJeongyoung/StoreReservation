@@ -10,7 +10,6 @@ class DiscountImageAdapter:RecyclerView.Adapter<DiscountImageAdapter.Holder>(){
     val discountList = arrayListOf<Int>(R.drawable.discount1,R.drawable.discount2,R.drawable.discount3,R.drawable.discount4,R.drawable.discount5,)
 
     inner class Holder(val binding: DiscountListBinding):RecyclerView.ViewHolder(binding.root){
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {

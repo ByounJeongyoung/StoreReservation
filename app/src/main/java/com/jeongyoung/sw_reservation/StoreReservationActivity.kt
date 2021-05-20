@@ -8,23 +8,21 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.jeongyoung.sw_reservation.databinding.ActivityReservationBinding
 
-
+//나의 예약 페이지
 class StoreReservationActivity : AppCompatActivity() {
 
-    private lateinit var articleDB: DatabaseReference
     val binding by lazy { ActivityReservationBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-/*
-        val shared = getSharedPreferences("reservationInform", Context.MODE_PRIVATE)
-        val name = shared.getString("storeName", "")
-        val num = shared.getString("peoplenum", "")
-*/
+
+        //현재 sharedPreference 이용 어려움 -> 임의 작성
         binding.nameText.text = "JeongYoung"
         binding.numText.text = "3"
 
-
+        //가게 상세위치 제공
+        //StoreReservationMapActivity -> 상세정보 전용 페이지
         binding.map.setOnClickListener {
             val intent = Intent(this, StoreReservationMapActivity::class.java)
             startActivity(intent)
@@ -33,11 +31,5 @@ class StoreReservationActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        /*  binding.button.setOnClickListener {
-
-
-              val intent = Intent(this,StoreReservationDetailActivity::class.java)
-              startActivity(intent)
-          }*/
     }
 }

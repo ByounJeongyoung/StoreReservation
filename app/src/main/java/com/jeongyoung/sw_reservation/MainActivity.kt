@@ -17,53 +17,46 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding  = ActivityMainBinding.inflate(layoutInflater)
+        val binding  = ActivityMainBinding.inflate(layoutInflater)  //xml binding
         setContentView(binding.root)
 
-        //binding.tuttle.setImageResource(R.drawable.tuttle)  거북이 시도 실패 -> img필요할때 활용
+        val foodData = foodListfunc()           //첫번째 layout에 담을 사진 list를 함수로 생성
 
-
-
-        val foodData = foodListfunc()
-        val topViewPagerAdapter = TopViewPagerAdapter(foodData)
+        val topViewPagerAdapter = TopViewPagerAdapter(foodData) //adapter와 연결
         binding.topLayout.adapter = topViewPagerAdapter
 
 
-        val middleLayoutAdapter = middleLayoutAdapter()
+        val middleLayoutAdapter = middleLayoutAdapter()       //두번째 뷰페이저와 어답터 생성,연결
         binding.listLayout.adapter = middleLayoutAdapter
         binding.listLayout.layoutManager = LinearLayoutManager(
             applicationContext,
             LinearLayoutManager.HORIZONTAL, false
         )
 
-        val cardImgaeAdapter = CardImgaeAdapter()
+        val cardImgaeAdapter = CardImgaeAdapter()             //카드 이미지 어답터 생성,연결
         binding.card.adapter = cardImgaeAdapter
         binding.card2.adapter = cardImgaeAdapter
 
-        val discountImageAdapter = DiscountImageAdapter()
+        val discountImageAdapter = DiscountImageAdapter()     //할인 이미지 어답터 생성, 연결
         binding.lastcard.adapter = discountImageAdapter
 
-        val recommendAdapter  = RecommendAdapter()
+        val recommendAdapter  = RecommendAdapter()            //추천 이미지(last)어답터 생성,연결
         binding.recommendationCard.adapter = recommendAdapter
 
+        //"예약하기" 버튼클릭 -> 예약하는 화면으로 이동
         binding.reservationButton.setOnClickListener {
             val intent = Intent(binding.root.context, StoreReservationDetailActivity::class.java)
             startActivity(intent)
-            // ContextCompat.startActivity(binding.root.context, intent, null)
-
-
         }
+
+        //"내 예약 정보"버튼 클릭-> 내 예약정보 화면으로 이동
        binding.myReservation.setOnClickListener {
             val intent = Intent(binding.root.context, StoreReservationActivity::class.java)
             startActivity(intent)
-           val shared = getSharedPreferences("reservationInform", Context.MODE_PRIVATE)
-           val editor: SharedPreferences.Editor = shared.edit()
-
-           editor.clear()
-           editor.commit()
         }
-
     }
+
+    //첫번째 layout에 담을 사진  함수화
     fun foodListfunc(): ArrayList<Int> {
         val foodList = arrayListOf<Int>(
             R.drawable.food1,

@@ -30,9 +30,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mapView: MapView
     private lateinit var naverMap: NaverMap
 
-
     val binding by lazy { ActivityLocationBinding.inflate(layoutInflater) }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +39,6 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView = findViewById(R.id.map_view)
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
-
 
         val storeData = store()
         val locationActivtyAdapter = LocationActivityAdapter(storeData)
@@ -194,24 +191,6 @@ fun list(name: String, price: String, titlefood: String) {
 }
 
 data class Store(var name: String, val price: String, val titlefood: String)
-
-/*
-fun store1(title:String,price: String,titlefood: String) {
-    val title = title
-    val price = price
-    val titlefood = titlefood
-
-return Store(title, price, titlefood) as Store
-}*/
-/*
-    override fun onClick(overlay: Overlay): Boolean {
-
-        overlay.tag.let {
-              Snackbar.make (baseContext,"fdsdf",Toast.LENGTH_SHORT).show()
-        }
-     return false
-    }
-}*/
 
 
 

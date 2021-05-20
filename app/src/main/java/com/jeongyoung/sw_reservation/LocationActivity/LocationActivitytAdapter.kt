@@ -31,7 +31,6 @@ class LocationActivityAdapter(val storeName: ArrayList<Store>) :
         }
 
         fun bind(store: Store) {
-
             binding.storeName.text = store.name
             binding.piceTextView.text = store.price
             binding.titlefood.text = store.titlefood
