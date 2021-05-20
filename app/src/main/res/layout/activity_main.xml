@@ -290,6 +290,23 @@
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recommendation" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mapButton"
+            android:layout_width="130dp"
+            android:layout_height="35sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/bamin"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="지도로 보기"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/reservationButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recommendationCard" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/reservationButton"
@@ -309,7 +326,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recommendationCard" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:text="111111"
             android:id="@+id/myReservation"
