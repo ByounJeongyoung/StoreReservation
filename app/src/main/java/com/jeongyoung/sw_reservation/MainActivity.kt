@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -16,6 +17,7 @@ import com.jeongyoung.sw_reservation.LocationActivity.LocationActivity
 import com.jeongyoung.sw_reservation.MainFragment.FragmentActivity
 import com.jeongyoung.sw_reservation.databinding.ActivityMainBinding
 import com.jeongyoung.sw_reservation.location.LoginActivity
+import com.jeongyoung.sw_reservation.mypage.MyPageFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding  = ActivityMainBinding.inflate(layoutInflater)  //xml binding
+        val binding = ActivityMainBinding.inflate(layoutInflater)  //xml binding
         setContentView(binding.root)
 
         val foodData = foodListfunc()           //첫번째 layout에 담을 사진 list를 함수로 생성
@@ -47,30 +49,50 @@ class MainActivity : AppCompatActivity() {
         val discountImageAdapter = DiscountImageAdapter()     //할인 이미지 어답터 생성, 연결
         binding.lastcard.adapter = discountImageAdapter
 
-        val recommendAdapter  = RecommendAdapter()            //추천 이미지(last)어답터 생성,연결
+        val recommendAdapter = RecommendAdapter()            //추천 이미지(last)어답터 생성,연결
         binding.recommendationCard.adapter = recommendAdapter
 
         //"예약하기" 버튼클릭 -> 예약하는 화면으로 이동
         binding.reservationButton.setOnClickListener {
-            if(auth.currentUser == null){
-                Toast.makeText(this,"로그인 후 예약이 가능합니다",Toast.LENGTH_SHORT).show()
+            if (auth.currentUser == null) {
+                Toast.makeText(this, "로그인 후 예약이 가능합니다", Toast.LENGTH_SHORT).show()
             }
         }
 
         //"내 예약 정보"버튼 클릭-> 내 예약정보 화면으로 이동
-       binding.myReservation.setOnClickListener {
-            val intent = Intent(binding.root.context, StoreReservationActivity::class.java)
+        binding.map.setOnClickListener {
+            val intent = Intent(binding.root.context, LocationActivity::class.java)
             startActivity(intent)
         }
+        auth = Firebase.auth
+        val user = Firebase.auth.currentUser
+        if (user == null) {
+            binding.noId.isVisible = true
 
-        binding.Logout.setOnClickListener {
-            auth.signOut()
-                startActivity(Intent(this,LoginActivity::class.java))
+        }
+        if (user != null) {
+            binding.myInform.isVisible = true
+            binding.myInform.setOnClickListener {
+                startActivity(Intent(this, StoreReservationActivity::class.java))
+            }
+        }
+
+        if (user != null) {
+            binding.Logout.isVisible = true
+            binding.Logout.setOnClickListener {
+                auth.signOut()
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
+        if (user != null) {
+            binding.userId.text = user.email
 
         }
         binding.navButton.setOnClickListener {
             binding.drawer.openDrawer(GravityCompat.START)
         }
+
+
     }
 
     //첫번째 layout에 담을 사진  함수화
@@ -84,14 +106,16 @@ class MainActivity : AppCompatActivity() {
         )
         return foodList
     }
-   override fun onStart() {
-      super.onStart()
+
+    override fun onStart() {
+        super.onStart()
         auth = Firebase.auth
-      val currentUser = auth.currentUser
-      /*if (currentUser == null) {
-          startActivity(Intent(this,LoginActivity::class.java))
-      }*/
-  }
+
+        /* val currentUser = auth.currentUser
+         if (currentUser == null) {
+             startActivity(Intent(this,LoginActivity::class.java))
+         }*/
+    }
 
 
 }
