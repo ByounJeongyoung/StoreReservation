@@ -12,8 +12,7 @@
         android:fontFamily="@font/bamin"
         android:text="예약하기"
         android:textColor="@color/black"
-        android:textSize="30dp"
-        android:textStyle="bold"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -4,16 +4,23 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.jeongyoung.sw_reservation.LocationActivity.LocationActivity
 import com.jeongyoung.sw_reservation.MainFragment.FragmentActivity
 import com.jeongyoung.sw_reservation.databinding.ActivityMainBinding
+import com.jeongyoung.sw_reservation.location.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 
 
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,14 +52,24 @@ class MainActivity : AppCompatActivity() {
 
         //"예약하기" 버튼클릭 -> 예약하는 화면으로 이동
         binding.reservationButton.setOnClickListener {
-            val intent = Intent(binding.root.context, StoreReservationDetailActivity::class.java)
-            startActivity(intent)
+            if(auth.currentUser == null){
+                Toast.makeText(this,"로그인 후 예약이 가능합니다",Toast.LENGTH_SHORT).show()
+            }
         }
 
         //"내 예약 정보"버튼 클릭-> 내 예약정보 화면으로 이동
        binding.myReservation.setOnClickListener {
             val intent = Intent(binding.root.context, StoreReservationActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.Logout.setOnClickListener {
+            auth.signOut()
+                startActivity(Intent(this,LoginActivity::class.java))
+
+        }
+        binding.navButton.setOnClickListener {
+            binding.drawer.openDrawer(GravityCompat.START)
         }
     }
 
@@ -67,5 +84,16 @@ class MainActivity : AppCompatActivity() {
         )
         return foodList
     }
+   override fun onStart() {
+      super.onStart()
+        auth = Firebase.auth
+      val currentUser = auth.currentUser
+      /*if (currentUser == null) {
+          startActivity(Intent(this,LoginActivity::class.java))
+      }*/
+  }
+
+
 }
+
 

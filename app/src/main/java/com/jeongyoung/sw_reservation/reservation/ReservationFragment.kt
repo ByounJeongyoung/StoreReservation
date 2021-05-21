@@ -2,6 +2,7 @@ package com.jeongyoung.sw_reservation.reservation
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -63,6 +64,8 @@ class ReservationFragment : Fragment(R.layout.fragment_reservation) {
         reservationAdapter = ReservationAdapter(reservationClickedlistener = {
             val intent = Intent(binding!!.root.context, MainActivity::class.java)
             startActivity((intent))
+            Log.d("size1111111","${reservationList.size.toString()}")
+
         })
         /* reservationAdapter.submitList(mutableListOf<ReservationModel>().apply {
              for(no in 1..10){

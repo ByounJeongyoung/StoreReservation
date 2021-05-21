@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.jeongyoung.sw_reservation.LocationActivity.Store
+import com.jeongyoung.sw_reservation.databinding.ActivityMainBinding
 import com.jeongyoung.sw_reservation.databinding.ActivityReservationDetailBinding
 import com.jeongyoung.sw_reservation.databinding.FragmentReservationBinding
 import com.jeongyoung.sw_reservation.reservation.DBkey
@@ -66,6 +67,12 @@ class StoreReservationDetailActivity : AppCompatActivity() {
 
             articleDB.push().setValue(reservationModel1)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    val intent = Intent(this,ActivityMainBinding::class.java)
+        startActivity(intent)
     }
 }
 

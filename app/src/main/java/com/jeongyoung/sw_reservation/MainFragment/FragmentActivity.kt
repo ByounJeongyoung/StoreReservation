@@ -16,16 +16,17 @@ class FragmentActivity : AppCompatActivity() {
     //val locationFragment by lazy { LocationFragment() }
     val myPageFragment by lazy { MyPageFragment() }
     val reservationFragment by lazy { ReservationFragment() }
-    val homeFragment by lazy { HomeFragment() }
+   // val homeFragment by lazy { HomeFragment() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        replaceFragment(homeFragment)
+
+        replaceFragment(reservationFragment)
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.home -> replaceFragment(homeFragment)
+                //R.id.home -> replaceFragment(homeFragment)
                 // R.id.location -> replaceFragment(locationFragment)
                 R.id.reservation -> replaceFragment(reservationFragment)
                 R.id.mypage -> replaceFragment(myPageFragment)

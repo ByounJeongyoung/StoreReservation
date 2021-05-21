@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jeongyoung.sw_reservation">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
 
         android:allowBackup="true"
@@ -14,13 +14,16 @@
         <activity android:name=".MainFragment.FragmentActivity"></activity>
         <activity android:name=".LocationActivity.LocationActivity"></activity>
         <activity android:name="StoreReservationDetailActivity"></activity>
-<activity android:name="StoreReservationMapActivity"></activity>
+        <activity android:name="StoreReservationMapActivity"></activity>
         <activity android:name="StoreReservationActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".location.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
 
         <meta-data
