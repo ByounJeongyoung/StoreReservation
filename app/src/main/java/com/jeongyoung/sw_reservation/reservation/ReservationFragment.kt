@@ -18,6 +18,7 @@ import com.jeongyoung.sw_reservation.MainActivity
 import com.jeongyoung.sw_reservation.R
 import com.jeongyoung.sw_reservation.databinding.FragmentHomeBinding
 import com.jeongyoung.sw_reservation.databinding.FragmentReservationBinding
+import com.jeongyoung.sw_reservation.mypage.MyPageFragment
 import com.jeongyoung.sw_reservation.reservation.DBkey.Companion.DB_ARTICLES
 
 class ReservationFragment : Fragment(R.layout.fragment_reservation) {
@@ -64,7 +65,6 @@ class ReservationFragment : Fragment(R.layout.fragment_reservation) {
         reservationAdapter = ReservationAdapter(reservationClickedlistener = {
             val intent = Intent(binding!!.root.context, MainActivity::class.java)
             startActivity((intent))
-            Log.d("size1111111","${reservationList.size.toString()}")
 
         })
         /* reservationAdapter.submitList(mutableListOf<ReservationModel>().apply {

@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="trans">#00000000</color>
     <color name="orange">#E6DE99</color>
-    <color name="red">#FFC107</color>
+    <color name="red">#FF5722</color>
     <color name="yellow">#FFC107</color>
     <color name="gray">#E4E4E3</color>
     <color name="localList">#ECECE6</color>
@@ -17,4 +17,6 @@
     <color name="login">#FFEB3B</color>
 </resources>
   <!--  26DCED
-    F23AADB8 -->
+    F23AADB8
+
+    #FFC107-->

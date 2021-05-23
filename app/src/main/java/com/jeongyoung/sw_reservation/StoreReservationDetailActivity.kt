@@ -64,8 +64,8 @@ class StoreReservationDetailActivity : AppCompatActivity() {
             val storeName = binding.nameEditText1.text.toString()
             val peopleNum = binding.nameEditText2.text.toString()
             val reservationModel1 = ReservationModel(storeName, peopleNum, 0)
-
             articleDB.push().setValue(reservationModel1)
+             finish()
         }
     }
 

@@ -22,7 +22,7 @@ import com.jeongyoung.sw_reservation.mypage.MyPageFragment
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var auth: FirebaseAuth
+    private  lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         val recommendAdapter = RecommendAdapter()            //추천 이미지(last)어답터 생성,연결
         binding.recommendationCard.adapter = recommendAdapter
 
+        binding.noId.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
         //"예약하기" 버튼클릭 -> 예약하는 화면으로 이동
         binding.reservationButton.setOnClickListener {
             if (auth.currentUser == null) {
@@ -61,8 +65,11 @@ class MainActivity : AppCompatActivity() {
 
         //"내 예약 정보"버튼 클릭-> 내 예약정보 화면으로 이동
         binding.map.setOnClickListener {
+            if (auth.currentUser == null) {
+                Toast.makeText(this, "로그인 후 예약이 가능합니다", Toast.LENGTH_SHORT).show()
+            }else{
             val intent = Intent(binding.root.context, LocationActivity::class.java)
-            startActivity(intent)
+            startActivity(intent)}
         }
         auth = Firebase.auth
         val user = Firebase.auth.currentUser
@@ -110,14 +117,15 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         auth = Firebase.auth
+        val currentUser = auth.currentUser
 
-        /* val currentUser = auth.currentUser
-         if (currentUser == null) {
-             startActivity(Intent(this,LoginActivity::class.java))
-         }*/
+        if(currentUser !=null){
+               val id = "ios@google.com"
+                if (currentUser.email == id) {
+                    startActivity(Intent(this, FragmentActivity::class.java))
+            }
+        }
     }
-
-
 }
 
 

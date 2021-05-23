@@ -27,7 +27,7 @@ android:paddingEnd="16dp">
     android:layout_marginStart="16dp"
     android:maxLines="2"
     android:textColor="@color/black"
-    android:textSize="16sp"
+    android:textSize="13sp"
     android:hint="카타르시스"
     android:textStyle="bold"
     app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +38,7 @@ android:paddingEnd="16dp">
     android:layout_marginTop="7dp"
     android:id="@+id/piceTextView"
     android:layout_width="0dp"
+    android:textSize="10sp"
     android:layout_height="wrap_content"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="@+id/storeName"
@@ -46,13 +47,10 @@ android:paddingEnd="16dp">
 <TextView
     android:id="@+id/titlefood"
     android:layout_width="0dp"
-
     android:layout_height="wrap_content"
-
     android:layout_marginTop="7dp"
     android:textColor="@color/black"
-    android:textSize="15sp"
-    android:textStyle="bold"
+    android:textSize="12sp"
     android:fontFamily="@font/hana"
     app:layout_constraintTop_toBottomOf="@id/piceTextView"
     app:layout_constraintEnd_toEndOf="parent"

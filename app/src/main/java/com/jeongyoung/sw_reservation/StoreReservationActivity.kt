@@ -18,8 +18,8 @@ class StoreReservationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //현재 sharedPreference 이용 어려움 -> 임의 작성
-        binding.nameText.text = "JeongYoung"
-        binding.numText.text = "3"
+        binding.nameText.text = "변정영"
+        binding.numText.text = "3명"
 
         //가게 상세위치 제공
         //StoreReservationMapActivity -> 상세정보 전용 페이지
