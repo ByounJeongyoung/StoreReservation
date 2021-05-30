@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.ChildEventListener
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.jeongyoung.sw_reservation.MainActivity
@@ -63,8 +60,11 @@ class ReservationFragment : Fragment(R.layout.fragment_reservation) {
        // articleDB = Firebase.database.reference.child(DB_ARTICLES)
 
         reservationAdapter = ReservationAdapter(reservationClickedlistener = {
-            val intent = Intent(binding!!.root.context, MainActivity::class.java)
-            startActivity((intent))
+
+
+
+//            val intent = Intent(binding!!.root.context, MainActivity::class.java)
+//            startActivity((intent))
 
         })
         /* reservationAdapter.submitList(mutableListOf<ReservationModel>().apply {

@@ -16,11 +16,15 @@ class StoreReservationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        //현재 sharedPreference 작성
+        val shared = getSharedPreferences("storeName",Context.MODE_PRIVATE)
 
-        //현재 sharedPreference 이용 어려움 -> 임의 작성
-        binding.nameText.text = "변정영"
-        binding.numText.text = "3명"
+        binding.nameText.text = shared.getString("name","")
+        binding.numText.text =shared.getString("peopleNum","1")
+        binding.timeText.text  =shared.getString("reserveTime","1")
 
+        //binding.nameText.text = "변정영"
+        //binding.numText.text = "3명"
         //가게 상세위치 제공
         //StoreReservationMapActivity -> 상세정보 전용 페이지
         binding.map.setOnClickListener {

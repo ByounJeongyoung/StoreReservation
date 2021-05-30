@@ -79,9 +79,10 @@ binding.noId.setOnClickListener {
                             startActivity(Intent(this, MainActivity::class.java))
                         } else {
                             Toast.makeText(
-                                baseContext, "Authentication failed.",
+                                this, "Authentication failed.",
                                 Toast.LENGTH_SHORT
                             ).show()
+
                         }
                     }
             } else {
@@ -102,7 +103,7 @@ binding.noId.setOnClickListener {
                                 .show()
                         } else {
                             Toast.makeText(
-                                baseContext,
+                                this,
                                 "이미 가입한 이메일이거나. 장난치지 마십시요",
                                 Toast.LENGTH_SHORT
                             )

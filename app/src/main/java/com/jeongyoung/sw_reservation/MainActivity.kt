@@ -36,15 +36,20 @@ class MainActivity : AppCompatActivity() {
 
 
         val middleLayoutAdapter = middleLayoutAdapter()       //두번째 뷰페이저와 어답터 생성,연결
-        binding.listLayout.adapter = middleLayoutAdapter
-        binding.listLayout.layoutManager = LinearLayoutManager(
-            applicationContext,
-            LinearLayoutManager.HORIZONTAL, false
-        )
+        binding.apply{
+            listLayout.adapter = middleLayoutAdapter
+            listLayout.layoutManager = LinearLayoutManager(
+                applicationContext,
+                LinearLayoutManager.HORIZONTAL, false
+            )
+        }
+
 
         val cardImgaeAdapter = CardImgaeAdapter()             //카드 이미지 어답터 생성,연결
-        binding.card.adapter = cardImgaeAdapter
-        binding.card2.adapter = cardImgaeAdapter
+        binding.apply{
+            card.adapter = cardImgaeAdapter
+            card2.adapter = cardImgaeAdapter
+        }
 
         val discountImageAdapter = DiscountImageAdapter()     //할인 이미지 어답터 생성, 연결
         binding.lastcard.adapter = discountImageAdapter
@@ -81,6 +86,12 @@ class MainActivity : AppCompatActivity() {
             binding.myInform.isVisible = true
             binding.myInform.setOnClickListener {
                 startActivity(Intent(this, StoreReservationActivity::class.java))
+            }
+        }
+        if (user != null) {
+            binding.reservationButton.isVisible = true
+            binding.reservationButton.setOnClickListener {
+                startActivity(Intent(this, LocationActivity::class.java))
             }
         }
 

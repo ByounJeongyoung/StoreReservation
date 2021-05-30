@@ -85,7 +85,7 @@ class StoreReservationMapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         //용량 확보
         naverMap.maxZoom = 18.0
-        naverMap.minZoom = 15.0
+        naverMap.minZoom = 21.0
 
         //시작위치 고도리 위치로 네이버맵으로 경도 초기화
         val cameraUpdate = CameraUpdate.scrollTo(LatLng(37.29970341392781, 127.04282601032713))

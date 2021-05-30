@@ -4,8 +4,9 @@ data class ReservationModel (
 
     val name : String,
     val people: String,
-    val crateAT : Long, //시간
+    val time : String,
+     //시간
 
 ){
-    constructor():this("","",0)
+    constructor():this("","","")
 }
