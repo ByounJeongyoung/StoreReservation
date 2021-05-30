@@ -1,5 +1,6 @@
 package com.jeongyoung.sw_reservation.LocationActivity
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -17,23 +18,34 @@ import com.jeongyoung.sw_reservation.StoreReservationDetailActivity
 import com.jeongyoung.sw_reservation.databinding.LocationFragmentSheetDetailBinding
 
 
-class LocationActivityAdapter(val storeName: ArrayList<Store>) :
+class LocationActivityAdapter(val storeName: ArrayList<Store>, val activity:Activity) :
     RecyclerView.Adapter<LocationActivityAdapter.Holder>() {
 
     inner class Holder(val binding: LocationFragmentSheetDetailBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        init {
-            binding.root.setOnClickListener {
-                //  Toast.makeText(this@LocationActivityAdapter,"${binding.storeName.text}",Toast.LENGTH_SHORT).show()
-                val intent = Intent(binding.root.context, StoreReservationDetailActivity::class.java)
-                ContextCompat.startActivity(binding.root.context, intent, null)
-            }
-        }
+        private lateinit var name4:String
 
+        init {
+                binding.root.setOnClickListener {
+             //  Toast.makeText(this@LocationActivityAdapter,"${binding.storeName.text}",Toast.LENGTH_SHORT).show()
+                val intent = Intent(activity, StoreReservationDetailActivity::class.java)
+//                intent.putExtra("storeName",this.name4)
+//                intent.putExtra("storeImage","")
+               ContextCompat.startActivity(binding.root.context, intent, null)
+            }
+       }
+////        }
+////            val intent = Intent(binding.root.context, StoreReservationDetailActivity::class.java)
+////                intent.putExtra("storeName","")
+////                intent.putExtra("storeImage","")
+////                ContextCompat.startActivity(binding.root.context, intent, null)
         fun bind(store: Store) {
-            binding.storeName.text = store.name
+            binding.thumbnailImageView.setImageResource(store.img)
+             binding.storeName.text = store.name
             binding.piceTextView.text = store.price
             binding.titlefood.text = store.titlefood
+            name4 = binding.storeName.text.toString()
+
         }
     }
 
@@ -51,8 +63,10 @@ class LocationActivityAdapter(val storeName: ArrayList<Store>) :
     }
 
     override fun onBindViewHolder(holder: LocationActivityAdapter.Holder, position: Int) {
+
         val list = storeName.get(position)
         holder.bind(list)
+
     }
 
     override fun getItemCount() = storeName.size

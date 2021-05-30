@@ -138,6 +138,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
     articleAdapter = ArticleAdapter()
     //   articleAdapter.submitList(mutableListOf<ArticleModel>().apply {
+
     //     add(ArticleModel("0","aaaaaa",1000,"4000",""))
 
     //})

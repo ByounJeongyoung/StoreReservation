@@ -17,6 +17,7 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.Holder>() {
     )
 
     inner class Holder(val binding: RecommendListBinding) : RecyclerView.ViewHolder(binding.root) {
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {

@@ -61,6 +61,14 @@ private var dayOrNight = true
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+//        val intent = Intent()
+//        val name = intent.getStringExtra("storeName")
+//        val img =intent.getIntExtra("storeImage",0)
+//        Log.d("name",""+name)
+//          binding.storeName.text = name
+//        binding.storeImg.setImageResource(img)
+
+
         //데이터 중복 방지
         reservationList.clear()
         //추가할 데이터 위치 설정
@@ -141,8 +149,8 @@ private var dayOrNight = true
 
     override fun onDestroy() {
         super.onDestroy()
-    val intent = Intent(this,ActivityMainBinding::class.java)
-        startActivity(intent)
+//    val intent = Intent(this,ActivityMainBinding::class.java)
+//        startActivity(intent)
     }
 }
 
