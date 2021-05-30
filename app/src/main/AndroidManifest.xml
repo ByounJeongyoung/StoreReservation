@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SW_reservation">
+        <activity android:name=".Review"></activity>
+        <activity android:name=".ReViewStore"></activity>
         <activity android:name=".MainFragment.FragmentActivity"></activity>
         <activity android:name=".LocationActivity.LocationActivity"></activity>
         <activity android:name="StoreReservationDetailActivity"></activity>

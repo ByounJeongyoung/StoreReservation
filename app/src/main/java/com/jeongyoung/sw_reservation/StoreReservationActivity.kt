@@ -35,5 +35,9 @@ class StoreReservationActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+        binding.review.setOnClickListener {
+            startActivity(Intent(this@StoreReservationActivity,Review::class.java))
+
+        }
     }
 }

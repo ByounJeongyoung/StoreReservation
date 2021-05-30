@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.jeongyoung.sw_reservation.MainActivity
 import com.jeongyoung.sw_reservation.MainFragment.FragmentActivity
+import com.jeongyoung.sw_reservation.ReViewStore
 import com.jeongyoung.sw_reservation.StoreReservationActivity
 import com.jeongyoung.sw_reservation.StoreReservationDetailActivity
 import com.jeongyoung.sw_reservation.databinding.LocationFragmentSheetDetailBinding
@@ -27,8 +28,9 @@ class LocationActivityAdapter(val storeName: ArrayList<Store>, val activity:Acti
 
         init {
                 binding.root.setOnClickListener {
+
              //  Toast.makeText(this@LocationActivityAdapter,"${binding.storeName.text}",Toast.LENGTH_SHORT).show()
-                val intent = Intent(activity, StoreReservationDetailActivity::class.java)
+                val intent = Intent(activity, ReViewStore::class.java)
 //                intent.putExtra("storeName",this.name4)
 //                intent.putExtra("storeImage","")
                ContextCompat.startActivity(binding.root.context, intent, null)
