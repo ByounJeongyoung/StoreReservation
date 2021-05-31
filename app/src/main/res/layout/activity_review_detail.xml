@@ -8,29 +8,49 @@
     <TextView
         android:id="@+id/id"
         android:textStyle="bold"
-        android:layout_width="0dp"
+        android:maxLines="1"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:textColor="#0C0C0C"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/ratingbar"
         app:layout_constraintHorizontal_weight="0.3"
+        android:layout_marginEnd="15dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="10"
+        android:layout_marginEnd="170dp"
+        app:layout_constraintBottom_toBottomOf="@id/id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/id"
+        app:layout_constraintTop_toTopOf="@id/id"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/comment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+
         android:layout_marginTop="28dp"
         android:ellipsize="end"
         android:maxLines="3"
-        android:text="sddsdsasds"
         android:textColor="#5A5757"
-        android:textSize="13sp"
+        android:textSize="10sp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="0.6"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/id"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -38,7 +58,7 @@
         android:layout_width="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="#ACA8B1"
+        android:background="#81D2D7D8"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,27 @@
         app:layout_constraintHorizontal_bias="0.737"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+<RatingBar
+    style="@style/Widget.AppCompat.RatingBar.Indicator"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stepSize="10"
+    android:id="@+id/ratingbar"
+    android:rating="0"
+    android:numStars="5"
+    android:isIndicator="false"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/comment"
+    app:layout_constraintEnd_toEndOf="parent"/>
 
+    <TextView
+        android:id="@+id/ratingbarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/comment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ratingbar" />
     <Button
         android:id="@+id/reviewButton"
         android:layout_width="wrap_content"

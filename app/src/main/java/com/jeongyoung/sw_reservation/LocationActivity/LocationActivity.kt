@@ -196,10 +196,10 @@ val storeList = arrayListOf<Store>()
 
 fun store(): ArrayList<Store> {
 
-    list(R.drawable.recomend1,"카타르시스", "[경기대  컴퓨터 공학 학생 10000원할인]", "튀김 수육")
-    list(R.drawable.recomend2,"역전할머니", "인스타 태그 시 음료수 1개 무료", "염통꼬치")
-    list(R.drawable.recomend3,"서브웨이", "소프트웨어 공학 수강생 2000원 할인", "이탈리안 BMT샌드위치")
-    list(R.drawable.recomend3,"고도리 비스트로", "학점4.0 소주 3병 -> 1병 무료", "고도리 부대찌개")
+    list(R.drawable.reservationpic2,"카타르시스", "[경기대  컴퓨터 공학 학생 10000원할인]", "튀김 수육")
+    list(R.drawable.resevationpic1,"역전할머니", "인스타 태그 시 음료수 1개 무료", "염통꼬치")
+    list(R.drawable.resevationpic1,"서브웨이", "소프트웨어 공학 수강생 2000원 할인", "이탈리안 BMT샌드위치")
+    list(R.drawable.resevationpic1,"고도리 비스트로", "학점4.0 소주 3병 -> 1병 무료", "고도리 부대찌개")
     list(R.drawable.recomend3,"투썸", "오전 10시까지 아메리카노 5%할인", "투썸 치즈케익")
     list(R.drawable.recomend3,"장가행 눈꽃참치", "14시 30분부터 2시간 break time", "참다랑어 (대뱃살)")
     list(R.drawable.recomend3,"교동반점", "컴퓨터 공학과 학생 짜장면 50%할인", "짬뽕")
@@ -212,7 +212,7 @@ fun store(): ArrayList<Store> {
     list(R.drawable.recomend3,"마리나 그란데", "미국 서부요리 전문점", "파스타 & 샐러드")
     list(R.drawable.recomend3,"스타벅스", "직장인 할인 ","샌드위치" )
     list(R.drawable.recomend1,"투썸", "커피 1+1", )
-    list(R.drawable.recomend3,"카타르시스", "경기대 학생 10000원할인")
+    list(R.drawable.reservationpic2,"카타르시스", "경기대 학생 10000원할인")
     list(R.drawable.recomend3,"역전할머니", "인스타 태그 시 음료수 1개 무료")
     list(R.drawable.recomend3,"서브웨이", "경기대 학생 2000원 할인")
     list(R.drawable.recomend3,"고도리 비스트로", "소주 3병 -> 1병 무료")

@@ -27,6 +27,9 @@ class ReviewAdapter : ListAdapter<ReviewModel, ReviewAdapter.ViewHolder>(diffUti
         fun bind(reviewModel: ReviewModel) {
             binding.id.text = reviewModel.id
             binding.comment.text = reviewModel.review
+            binding.ratingbar.setIsIndicator(false)
+            binding.ratingbar.rating = reviewModel.score.toFloat()
+
         }
     }
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.RatingBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -24,14 +25,14 @@ import com.jeongyoung.sw_reservation.reservation.DBkey
 import com.jeongyoung.sw_reservation.reservation.ReservationAdapter
 import com.jeongyoung.sw_reservation.reservation.ReservationModel
 
-class Review : AppCompatActivity() {
+class Review : AppCompatActivity(), RatingBar.OnRatingBarChangeListener  {
     private lateinit var articleDB: DatabaseReference
     private lateinit var reviewAdapter: ReviewAdapter
 
     private  lateinit var auth: FirebaseAuth
     private val ReviewModelList = mutableListOf<ReviewModel>()
     val user = Firebase.auth.currentUser
-
+    var ratingscore = 0.0
     private val listener = object : ChildEventListener {
         override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
             val reviewModel = snapshot.getValue(ReviewModel::class.java)
@@ -59,6 +60,14 @@ class Review : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
+        binding.ratingbar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+            binding.ratingbarText.text = "${rating}점"
+            ratingscore = rating.toDouble()
+
+        }
+
+
         //데이터 중복 방지
         ReviewModelList.clear()
         //추가할 데이터 위치 설정
@@ -72,13 +81,17 @@ class Review : AppCompatActivity() {
             val splitNameArray = emailString.split("@")
             val comment = binding.comment.text.toString()
             val id = splitNameArray[0]
-            val reviewModel = ReviewModel(id,comment)
+            val reviewModel = ReviewModel(id,comment,ratingscore)
 
             articleDB.push().setValue(reviewModel)
             finish()
         }
     }
+
+    override fun onRatingChanged(ratingBar: RatingBar?, rating: Float, fromUser: Boolean) {
+
     }
+}
 //
 //    override fun onDestroy() {
 //        super.onDestroy()
