@@ -66,9 +66,12 @@ class Review : AppCompatActivity() {
 
         binding.reviewButton.setOnClickListener {
             articleDB.addChildEventListener(listener)
-
+            val dotString : String = user.email.toString()
+            val splitArray = dotString.split(".")
+            val emailString : String = splitArray[0].toString()
+            val splitNameArray = emailString.split("@")
             val comment = binding.comment.text.toString()
-            val id = user.email
+            val id = splitNameArray[0]
             val reviewModel = ReviewModel(id,comment)
 
             articleDB.push().setValue(reviewModel)

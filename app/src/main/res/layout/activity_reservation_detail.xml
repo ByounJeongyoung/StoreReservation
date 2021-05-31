@@ -146,15 +146,15 @@
         android:id="@+id/nameEditText3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
         android:hint=""
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@id/button222"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/inputText3"
         app:layout_constraintTop_toTopOf="@id/inputText3"
-        android:layout_marginEnd="50dp"
-        app:layout_constraintVertical_bias="0.291" />
-
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/nameEditText4"
@@ -174,39 +174,14 @@
         android:id="@+id/button222"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="500dp"
+        android:layout_marginBottom="156dp"
         android:backgroundTint="#95E8E0"
         android:text="예약하기"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/nameEditText2"
-        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintHorizontal_bias="0.638"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/storeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:text="dsdddsdd"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Line"
-        app:layout_constraintVertical_bias="0.15" />
-
-    <ImageView
-        android:id="@+id/storeImg"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/storeName"
-        app:srcCompat="@drawable/recomend2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

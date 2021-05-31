@@ -22,9 +22,11 @@ class ReservationAdapter(private val reservationClickedlistener: (ReservationMod
         RecyclerView.ViewHolder(binding.root) {
         private var done: Boolean = true
 
-
-        init {
+        fun bind(articleModel: ReservationModel) {
+//            val format = SimpleDateFormat("MM월 dd일")
+            //          val date = Date(articleModel.crateAT)
             binding.root.setOnClickListener {
+                reservationClickedlistener(articleModel)
                 if (done == true) {
                     binding.layout.setBackgroundColor(Color.WHITE)
                     done = !done
@@ -33,11 +35,6 @@ class ReservationAdapter(private val reservationClickedlistener: (ReservationMod
                     done = !done
                 }
             }
-        }
-        fun bind(articleModel: ReservationModel) {
-//            val format = SimpleDateFormat("MM월 dd일")
-            //          val date = Date(articleModel.crateAT)
-
             binding.name.text = articleModel.name
             binding.people.text = articleModel.people
             binding.time.text = articleModel.time

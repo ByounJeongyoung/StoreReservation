@@ -79,14 +79,14 @@ binding.noId.setOnClickListener {
                             startActivity(Intent(this, MainActivity::class.java))
                         } else {
                             Toast.makeText(
-                                this, "Authentication failed.",
+                                this, "회원 정보가 없습니다 이메일이나 비밀번호를 확인해주세요.",
                                 Toast.LENGTH_SHORT
                             ).show()
 
                         }
                     }
             } else {
-                Toast.makeText(this, "값을 입력해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "빈값이 없이 입력해주세요", Toast.LENGTH_SHORT).show()
             }
         }
     }

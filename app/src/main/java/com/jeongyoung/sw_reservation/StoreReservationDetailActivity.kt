@@ -41,7 +41,6 @@ class StoreReservationDetailActivity : AppCompatActivity() {
             reservationList.add(reservationModel)
             reservationAdapter.submitList(reservationList)
         }
-
         override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
         }
 
@@ -130,7 +129,8 @@ private var dayOrNight = true
             val peopleNum = selected
              var reserveTime =lunchTime
              if(dayOrNight == false){reserveTime = dinnerTime
-             //    Log.d("night","$dinnerTime")
+
+
              }
 
             val reservationModel1 = ReservationModel(storeName, peopleNum,reserveTime)

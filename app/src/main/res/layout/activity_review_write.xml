@@ -4,17 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
         android:id="@+id/comment"
+        android:layout_width="350dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="256dp"
         android:hint="sdsddssdsds"
         android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-      />
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/reviewButton"

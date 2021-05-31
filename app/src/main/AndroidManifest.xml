@@ -3,35 +3,34 @@
     package="com.jeongyoung.sw_reservation">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <application
 
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SW_reservation">
-        <activity android:name=".Review"></activity>
-        <activity android:name=".ReViewStore"></activity>
-        <activity android:name=".MainFragment.FragmentActivity"></activity>
-        <activity android:name=".LocationActivity.LocationActivity"></activity>
-        <activity android:name="StoreReservationDetailActivity"></activity>
-        <activity android:name="StoreReservationMapActivity"></activity>
-        <activity android:name="StoreReservationActivity"></activity>
+
+        <activity android:name=".Review" />
+        <activity android:name=".ReViewStore" />
+        <activity android:name=".MainFragment.FragmentActivity" />
+        <activity android:name=".LocationActivity.LocationActivity" />
+        <activity android:name=".StoreReservationDetailActivity" />
+        <activity android:name=".StoreReservationMapActivity" />
+        <activity android:name=".StoreReservationActivity" />
         <activity android:name=".location.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="5kb1iwoevu" />
-
     </application>
 
 </manifest>

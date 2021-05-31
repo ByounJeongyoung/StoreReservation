@@ -34,8 +34,11 @@ class MyPageFragment : Fragment(R.layout.fragment_mypage) {
         }
         if (user != null) {
             user?.let {
-                val name = user.email
-
+                val dotString : String = user.email.toString()
+                val splitArray = dotString.split(".")
+                val emailString : String = splitArray[0].toString()
+                val splitNameArray = emailString.split("@")
+                val name = splitNameArray[0]
                 binding!!.userId.text = name
             }
         }else{

@@ -29,10 +29,8 @@ import com.jeongyoung.sw_reservation.mypage.MyPageFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var  userDB : DatabaseReference
-    private  lateinit var auth: FirebaseAuth
-    var user1 = mutableMapOf<String,Any>()
-
+    private lateinit var userDB: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
 
     private val listener = object : ChildEventListener {
@@ -57,22 +55,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)  //xml binding
         setContentView(binding.root)
-
-        userDB = Firebase.database.reference.child("Users")
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
-        if(currentUser !=null){
-            val id = "ios@google.com"
+        if (currentUser != null) {
+            val id = "student@naver.com"
             if (currentUser.email == id) {
                 startActivity(Intent(this, FragmentActivity::class.java))
-            }else {
-                showNameInputPopup()
-
             }
+
         }
-
-
 
         val foodData = foodListfunc()           //첫번째 layout에 담을 사진 list를 함수로 생성
 
@@ -81,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
 
         val middleLayoutAdapter = middleLayoutAdapter()       //두번째 뷰페이저와 어답터 생성,연결
-        binding.apply{
+        binding.apply {
             listLayout.adapter = middleLayoutAdapter
             listLayout.layoutManager = LinearLayoutManager(
                 applicationContext,
@@ -91,11 +83,10 @@ class MainActivity : AppCompatActivity() {
 
 
         val cardImgaeAdapter = CardImgaeAdapter()             //카드 이미지 어답터 생성,연결
-        binding.apply{
+        binding.apply {
             card.adapter = cardImgaeAdapter
             card2.adapter = cardImgaeAdapter
         }
-
         val discountImageAdapter = DiscountImageAdapter()     //할인 이미지 어답터 생성, 연결
         binding.lastcard.adapter = discountImageAdapter
 
@@ -117,9 +108,13 @@ class MainActivity : AppCompatActivity() {
         binding.map.setOnClickListener {
             if (auth.currentUser == null) {
                 Toast.makeText(this, "로그인 후 예약이 가능합니다", Toast.LENGTH_SHORT).show()
-            }else{
-                val intent = Intent(binding.root.context, LocationActivity::class.java) ////////////////////////////////////////////////////////////////////////
-                startActivity(intent)}
+            } else {
+                val intent = Intent(
+                    binding.root.context,
+                    LocationActivity::class.java
+                ) ////////////////////////////////////////////////////////////////////////
+                startActivity(intent)
+            }
         }
         auth = Firebase.auth
         val user = Firebase.auth.currentUser
@@ -148,16 +143,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
         if (user != null) {
-
-            binding.userId.text = user1["name"].toString()
+            //이메일 뒤에 자르기
+            val dotString: String = user.email.toString()
+            val splitArray = dotString.split(".")
+            val emailString: String = splitArray[0].toString()
+            val splitNameArray = emailString.split("@")
+            binding.userId.text = "${(splitNameArray[0])}님  안녕하세요!"
 
             println(user.tenantId)
             println(user.getIdToken(true))
             println(user.uid)
-            Log.d("hellow",""+user.tenantId)
-            Log.d("hellow",""+user.getIdToken(true))
-            Log.d("hellow",""+user.uid)
-
+            Log.d("hellow", "" + user.tenantId)
+            Log.d("hellow", "" + user.getIdToken(true))
+            Log.d("hellow", "" + user.uid)
 
 
         }
@@ -183,30 +181,41 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-    }
-    private fun showNameInputPopup() {
-        val editText = EditText(this)
-        AlertDialog.Builder(this)
-            .setTitle("닉네임 입력해주세요")
-            .setView(editText)
-            .setPositiveButton("저장"){ _, _ ->
-                if(editText.text.isEmpty()){
-                    showNameInputPopup()
-                }else{
-                    saveUserName(editText.text.toString())
-                }
-            }
-            .setCancelable(false)
-            .show()
-    }
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
 
-    private fun saveUserName(name: String) {
-        val userId = auth.currentUser?.uid.orEmpty()
-        val currentUserDB = userDB.child(userId)
-        user1["userId"] = name
-        user1["name"] = name
-        currentUserDB.updateChildren(user1)
+        if (currentUser != null) {
+            val id = "student@naver.com"
+            if (currentUser.email == id) {
+                startActivity(Intent(this, FragmentActivity::class.java))
+            }
+
+        }
+
     }
+//    private fun showNameInputPopup() {
+//
+//        AlertDialog.Builder(this)
+//            .setTitle("닉네임 입력해주세요")
+//            .setView(editText)
+//            .setPositiveButton("저장"){ _, _ ->
+//                if(editText.text.isEmpty()){
+//                    showNameInputPopup()
+//                }else{
+//                    saveUserName(editText.text.toString())
+//                }
+//            }
+//            .setCancelable(false)
+//            .show()
+//    }
+//
+//    private fun saveUserName(name: String) {
+//        val userId = auth.currentUser?.uid.orEmpty()
+//        val currentUserDB = userDB.child(userId)
+//        user1["userId"] = name
+//        user1["name"] = name
+//        currentUserDB.updateChildren(user1)
+//    }
 
 }
 

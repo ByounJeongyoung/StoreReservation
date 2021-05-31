@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">SW_reservation</string>
     <string name="firebase_web_client_id">407828139240-efif8fqnenbnscjddganlh249cqglcmc.apps.googleusercontent.com</string>
-<string name="login">회원가입</string>
+    <string name="login">회원가입</string>
 </resources>
