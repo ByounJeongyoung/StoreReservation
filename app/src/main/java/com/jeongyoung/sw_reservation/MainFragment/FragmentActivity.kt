@@ -12,7 +12,7 @@ import com.jeongyoung.sw_reservation.reservation.ReservationFragment
 class FragmentActivity : AppCompatActivity() {
 
     val binding by lazy { ActivityFragmentBinding.inflate(layoutInflater) }
-
+    //
     //val locationFragment by lazy { LocationFragment() }
     val myPageFragment by lazy { MyPageFragment() }
     val reservationFragment by lazy { ReservationFragment() }

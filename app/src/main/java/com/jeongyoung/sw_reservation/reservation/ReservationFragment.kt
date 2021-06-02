@@ -17,7 +17,7 @@ import com.jeongyoung.sw_reservation.databinding.FragmentHomeBinding
 import com.jeongyoung.sw_reservation.databinding.FragmentReservationBinding
 import com.jeongyoung.sw_reservation.mypage.MyPageFragment
 import com.jeongyoung.sw_reservation.reservation.DBkey.Companion.DB_ARTICLES
-
+//
 class ReservationFragment : Fragment(R.layout.fragment_reservation) {
     private lateinit var articleDB: DatabaseReference //나중에 초기화 해줘야함,
     private lateinit var reservationAdapter: ReservationAdapter

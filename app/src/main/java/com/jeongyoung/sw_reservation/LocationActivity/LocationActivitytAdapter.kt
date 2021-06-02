@@ -28,7 +28,7 @@ class LocationActivityAdapter(val storeName: ArrayList<Store>, val activity:Acti
 
         init {
                 binding.root.setOnClickListener {
-
+//
              //  Toast.makeText(this@LocationActivityAdapter,"${binding.storeName.text}",Toast.LENGTH_SHORT).show()
                 val intent = Intent(activity, ReViewStore::class.java)
 //                intent.putExtra("storeName",this.name4)

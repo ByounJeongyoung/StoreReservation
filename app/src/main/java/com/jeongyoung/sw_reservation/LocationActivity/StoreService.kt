@@ -7,3 +7,4 @@ interface StoreService {
     @GET("v3/032ecbdd-2ec8-42bb-8607-87746a922764")
     fun stores(): Call<StoreRepository>
 }
+//

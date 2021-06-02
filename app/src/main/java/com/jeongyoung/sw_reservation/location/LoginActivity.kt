@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     val TAG = "googleLogin"
     private val RC_SIGN_IN = 1000
 
-
+    //
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

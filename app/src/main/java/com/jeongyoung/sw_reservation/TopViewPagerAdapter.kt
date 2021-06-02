@@ -24,7 +24,7 @@ class TopViewPagerAdapter(val foodListfunc : ArrayList<Int>) : RecyclerView.Adap
             FoodListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
     }
-
+    //
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.binding.imageViewFood.setImageResource(foodListfunc[position])
     }

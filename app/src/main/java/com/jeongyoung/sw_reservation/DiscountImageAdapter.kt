@@ -23,3 +23,4 @@ class DiscountImageAdapter:RecyclerView.Adapter<DiscountImageAdapter.Holder>(){
 
     override fun getItemCount() = discountList.size
 }
+//

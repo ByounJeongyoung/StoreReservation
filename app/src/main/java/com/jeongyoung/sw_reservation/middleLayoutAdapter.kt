@@ -18,6 +18,8 @@ class middleLayoutAdapter : RecyclerView.Adapter<middleLayoutAdapter.middleHolde
         "산본",
         "인계동",
         "부산",
+        "제주도",
+
         "제주도"
     )
 

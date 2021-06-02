@@ -23,7 +23,7 @@ class StoreReservationActivity : AppCompatActivity() {
         binding.nameText.text = shared.getString("name","")
         binding.numText.text =shared.getString("peopleNum","")
         binding.timeText.text  =shared.getString("reserveTime","")
-
+//
         //binding.nameText.text = "변정영"
         //binding.numText.text = "3명"
         //가게 상세위치 제공

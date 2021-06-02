@@ -42,7 +42,7 @@ class ReviewAdapter : ListAdapter<ReviewModel, ReviewAdapter.ViewHolder>(diffUti
             )
         )
     }
-
+    //
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(currentList[position])
     }
