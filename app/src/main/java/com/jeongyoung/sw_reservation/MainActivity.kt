@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         override fun onCancelled(error: DatabaseError) {
         }
     }
-    //
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)  //xml binding

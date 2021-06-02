@@ -43,7 +43,7 @@ class StoreReservationMapActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
     }
-    //
+
     override fun onStart() {
         super.onStart()
         mapView.onStart()

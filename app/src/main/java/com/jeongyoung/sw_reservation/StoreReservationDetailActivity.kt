@@ -33,7 +33,7 @@ class StoreReservationDetailActivity : AppCompatActivity() {
     private lateinit var lunchTime : String
     private lateinit var dinnerTime : String
 
-    //
+
     private val listener = object : ChildEventListener {
         override fun onChildAdded(snapshot: DataSnapshot, previousChildName: String?) {
             val reservationModel = snapshot.getValue(ReservationModel::class.java)

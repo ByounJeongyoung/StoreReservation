@@ -29,4 +29,3 @@ class CardImgaeAdapter : RecyclerView.Adapter<CardImgaeAdapter.Holder>() {
 
     override fun getItemCount() = cardList.size
 }
-//

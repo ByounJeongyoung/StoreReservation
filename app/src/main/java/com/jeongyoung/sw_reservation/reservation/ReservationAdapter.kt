@@ -17,7 +17,7 @@ import java.util.*
 
 class ReservationAdapter(private val reservationClickedlistener: (ReservationModel) -> Unit) :
     ListAdapter<ReservationModel, ReservationAdapter.ViewHolder>(diffUtill) {
-    //
+
     inner class ViewHolder(private val binding: FragmentReservation2Binding) :
         RecyclerView.ViewHolder(binding.root) {
         private var done: Boolean = true

@@ -25,7 +25,7 @@ class RecommendAdapter : RecyclerView.Adapter<RecommendAdapter.Holder>() {
             RecommendListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
     }
-    //
+
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.binding.recommendImage.setImageResource(recommendList[position])
     }

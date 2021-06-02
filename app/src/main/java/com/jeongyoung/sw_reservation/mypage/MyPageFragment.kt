@@ -20,7 +20,7 @@ class MyPageFragment : Fragment(R.layout.fragment_mypage) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
-//
+
         val fragmentReservationBinding = FragmentMypageBinding.bind(view) //뷰아 xml연결
         binding = fragmentReservationBinding
         val user = Firebase.auth.currentUser
