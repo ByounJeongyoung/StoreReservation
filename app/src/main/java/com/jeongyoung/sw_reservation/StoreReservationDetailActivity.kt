@@ -149,24 +149,7 @@ private var dayOrNight = true
 
     override fun onDestroy() {
         super.onDestroy()
-//    val intent = Intent(this,ActivityMainBinding::class.java)
-//        startActivity(intent)
+
     }
 }
 
-
-/* val shared = getSharedPreferences("reservationInform", Context.MODE_PRIVATE)
- val editor = shared.edit()
-
- editor.putString("storeName",storeName)
- editor.putString("peopleNum",peopleNum)
- editor.apply()*/
-//            val intent = Intent(this,StoreReservationActivity::class.java)
-//      intent.putExtra("people",storeName)
-//    intent.putExtra("peopleNum",peopleNum)
-
-
-//     finish()
-
-//articleDB.child("3번째").child("name").setValue(store)
-//articleDB.child("last").child("people").setValue("100명")

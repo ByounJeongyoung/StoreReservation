@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:paddingBottom="20dp"
+    android:layout_height="match_parent"
     android:paddingStart="10dp"
     android:paddingEnd="10dp"
-    android:layout_height="match_parent">
+    android:paddingBottom="20dp">
 
 
     <TextView
@@ -35,10 +35,11 @@
         android:id="@+id/img"
         android:layout_width="200dp"
         android:layout_height="180dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="18dp"
         android:background="@color/gray"
         android:elevation="10dp"
-        android:src="@drawable/food4"
+        android:src="@drawable/resevationpic1"
+        android:scaleType="fitXY"
         android:translationZ="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -48,15 +49,15 @@
     <TextView
         android:id="@+id/cardView"
         android:layout_width="270dp"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:layout_marginTop="130dp"
-        android:background="#FFFFFF"
+        android:background="#EEF2F3"
+        android:translationZ="10dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="저희 고도리 비스트로를 찾아 주셔서 감사합니다! 당일 10분전 방문해주시면   감사하겠습니다"
+        android:text="저희 카타르시스를 찾아 주셔서 감사합니다! 당일 10분전 방문해주시면  감사하겠습니다"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:textStyle="bold"
-
         app:layout_constraintBottom_toTopOf="@id/map"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -68,7 +69,7 @@
         android:id="@+id/Line"
         android:layout_width="0dp"
         android:layout_height="3dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="20dp"
         android:background="#CACAC4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -97,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:gravity="center_vertical|center_horizontal"
-        android:hint="saddsadas"
+
         android:textSize="10sp"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,6 +109,7 @@
         android:id="@+id/firstNumText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:fontFamily="@font/bamin"
         android:gravity="center_vertical|center_horizontal"
         android:text="인원수"
@@ -115,9 +117,24 @@
         android:textSize="10sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/numText"
-android:layout_marginStart="15dp"
         app:layout_constraintStart_toStartOf="@id/firstNameText"
         app:layout_constraintTop_toTopOf="@id/numText" />
+
+    <TextView
+        android:id="@+id/reservationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bamin"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="시간"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/timeText"
+        app:layout_constraintEnd_toEndOf="@+id/firstNumText"
+        app:layout_constraintStart_toStartOf="@id/firstNumText"
+        app:layout_constraintTop_toBottomOf="@id/firstNumText"
+        app:layout_constraintTop_toTopOf="@id/timeText" />
 
     <TextView
         android:id="@+id/numText"
@@ -125,52 +142,40 @@ android:layout_marginStart="15dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center_vertical|center_horizontal"
-        android:hint="vvsfdsfd"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@id/nameText"
         app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="@id/nameText"
         app:layout_constraintTop_toBottomOf="@id/nameText" />
+
     <TextView
         android:id="@+id/timeText"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center_vertical|center_horizontal"
-        android:hint="vvsfdsfd"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@id/numText"
         app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="@id/numText"
         app:layout_constraintTop_toBottomOf="@id/numText" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/call"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/reservation_background"
-        android:text="전화하기"
-        android:textSize="12sp"
-        android:translationZ="20dp"
-        app:layout_constraintBottom_toTopOf="@id/map"
-        app:layout_constraintEnd_toStartOf="@id/map"
-        app:layout_constraintTop_toBottomOf="@id/map"
-        app:layout_constraintVertical_bias="0.555" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/review"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="136dp"
-        android:background="@drawable/reservation_background"
+        android:layout_marginEnd="62dp"
+        android:backgroundTint="#95E8E0"
         android:text="리뷰쓰기"
         android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/map"
         android:translationZ="20dp"
         app:layout_constraintBottom_toTopOf="@id/map"
-        app:layout_constraintEnd_toStartOf="@id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+
         app:layout_constraintTop_toBottomOf="@id/map"
         app:layout_constraintVertical_bias="0.555" />
 
@@ -178,30 +183,31 @@ android:layout_marginStart="15dp"
         android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/reservation_background"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#95E8E0"
         android:text="지도 보기"
         android:textSize="12sp"
 
         android:translationZ="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/review"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Line" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
-        android:layout_height="40dp"
-        android:text="홈으로"
-        android:translationZ="10dp"
         android:layout_width="90sp"
+        android:layout_height="40dp"
         android:backgroundTint="#95E8E0"
+        android:text="홈으로"
         android:textSize="10sp"
+        android:translationZ="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/numText"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintVertical_bias="0.419" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

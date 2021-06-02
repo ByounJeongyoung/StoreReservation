@@ -41,7 +41,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
         mapView.getMapAsync(this)
 
         val storeData = store()
-        val locationActivtyAdapter = LocationActivityAdapter(storeData,activity = this,)
+        val locationActivtyAdapter = LocationActivityAdapter(storeData, activity = this)
         binding.include.recyclerView.adapter = locationActivtyAdapter
         binding.include.recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -195,36 +195,35 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback {
 val storeList = arrayListOf<Store>()
 
 fun store(): ArrayList<Store> {
-
-    list(R.drawable.reservationpic2,"카타르시스", "[경기대  컴퓨터 공학 학생 10000원할인]", "튀김 수육")
-    list(R.drawable.resevationpic1,"역전할머니", "인스타 태그 시 음료수 1개 무료", "염통꼬치")
-    list(R.drawable.resevationpic1,"서브웨이", "소프트웨어 공학 수강생 2000원 할인", "이탈리안 BMT샌드위치")
-    list(R.drawable.resevationpic1,"고도리 비스트로", "학점4.0 소주 3병 -> 1병 무료", "고도리 부대찌개")
-    list(R.drawable.recomend3,"투썸", "오전 10시까지 아메리카노 5%할인", "투썸 치즈케익")
-    list(R.drawable.recomend3,"장가행 눈꽃참치", "14시 30분부터 2시간 break time", "참다랑어 (대뱃살)")
-    list(R.drawable.recomend3,"교동반점", "컴퓨터 공학과 학생 짜장면 50%할인", "짬뽕")
-    list(R.drawable.recomend3,"동경당", "날씨온도 30도 이상 음료수 무료", "모밀세트")
-    list(R.drawable.recomend3,"겐코", "공대생 할인!", "대창덮밥")
-    list(R.drawable.recomend3,"광교치킨", "수요일 휴무", "후라이드")
-    list(R.drawable.recomend3,"꼬꼬누이", "7000원", "치킨 한마리")
-    list(R.drawable.recomend3,"엄마손맛", "00", "00")
-    list(R.drawable.recomend3,"방콕스토리", "태국요리 전문점", "카오팟")
-    list(R.drawable.recomend3,"마리나 그란데", "미국 서부요리 전문점", "파스타 & 샐러드")
-    list(R.drawable.recomend3,"스타벅스", "직장인 할인 ","샌드위치" )
-    list(R.drawable.recomend1,"투썸", "커피 1+1", )
-    list(R.drawable.reservationpic2,"카타르시스", "경기대 학생 10000원할인")
-    list(R.drawable.recomend3,"역전할머니", "인스타 태그 시 음료수 1개 무료")
-    list(R.drawable.recomend3,"서브웨이", "경기대 학생 2000원 할인")
-    list(R.drawable.recomend3,"고도리 비스트로", "소주 3병 -> 1병 무료")
-    list(R.drawable.recomend3,"경기대닭발", "계란찜 서비스")
-    list(R.drawable.recomend3,"큰맘할매순대국", "포장시 500원 추가")
-    list(R.drawable.recomend3,"맘스터치", "단체주문시 3일 전 미리 예약")
+    list(R.drawable.godori, "고도리 비스트로", "학점4.0 소주 3병 -> 1병 무료", "고도리 부대찌개")
+    list(R.drawable.resevationpic1, "카타르시스", "[경기대  컴퓨터 공학 학생 10000원할인]", "튀김 수육")
+    list(R.drawable.halmac, "역전할머니", "인스타 태그 시 음료수 1개 무료", "염통꼬치")
+    list(R.drawable.subway, "서브웨이", "소프트웨어 공학 수강생 2000원 할인", "이탈리안 BMT샌드위치")
+    list(R.drawable.twosome, "투썸", "오전 10시까지 아메리카노 5%할인", "투썸 치즈케익")
+    list(R.drawable.chamchi, "장가행 눈꽃참치", "14시 30분부터 2시간 break time", "참다랑어 (대뱃살)")
+    list(R.drawable.banzum, "교동반점", "컴퓨터 공학과 학생 짜장면 50%할인", "짬뽕")
+    list(R.drawable.recomend3, "동경당", "날씨온도 30도 이상 음료수 무료", "모밀세트")
+    list(R.drawable.recomend3, "겐코", "공대생 할인!", "대창덮밥")
+    list(R.drawable.recomend3, "광교치킨", "수요일 휴무", "후라이드")
+    list(R.drawable.gogonui, "꼬꼬누이", "7000원", "치킨 한마리")
+    list(R.drawable.recomend3, "엄마손맛", "00", "00")
+    list(R.drawable.recomend3, "방콕스토리", "태국요리 전문점", "카오팟")
+    list(R.drawable.recomend3, "마리나 그란데", "미국 서부요리 전문점", "파스타 & 샐러드")
+    list(R.drawable.recomend3, "스타벅스", "직장인 할인 ", "샌드위치")
+    list(R.drawable.recomend1, "투썸", "커피 1+1")
+    list(R.drawable.reservationpic2, "카타르시스", "경기대 학생 10000원할인")
+    list(R.drawable.recomend3, "역전할머니", "인스타 태그 시 음료수 1개 무료")
+    list(R.drawable.recomend3, "서브웨이", "경기대 학생 2000원 할인")
+    list(R.drawable.recomend3, "고도리 비스트로", "소주 3병 -> 1병 무료")
+    list(R.drawable.recomend3, "경기대닭발", "계란찜 서비스")
+    list(R.drawable.recomend3, "큰맘할매순대국", "포장시 500원 추가")
+    list(R.drawable.recomend3, "맘스터치", "단체주문시 3일 전 미리 예약")
 
     return storeList
 }
 
-fun list(img : Int, name: String, price: String, titlefood: String = "감자탕"  ) {
-    val store = Store(img ,name, price, titlefood)
+fun list(img: Int, name: String, price: String, titlefood: String = "감자탕") {
+    val store = Store(img, name, price, titlefood)
     storeList.add(store)
 }
 

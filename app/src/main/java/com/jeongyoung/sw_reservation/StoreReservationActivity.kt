@@ -3,6 +3,7 @@ package com.jeongyoung.sw_reservation
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
@@ -20,8 +21,8 @@ class StoreReservationActivity : AppCompatActivity() {
         val shared = getSharedPreferences("storeName",Context.MODE_PRIVATE)
 
         binding.nameText.text = shared.getString("name","")
-        binding.numText.text =shared.getString("peopleNum","1")
-        binding.timeText.text  =shared.getString("reserveTime","1")
+        binding.numText.text =shared.getString("peopleNum","")
+        binding.timeText.text  =shared.getString("reserveTime","")
 
         //binding.nameText.text = "변정영"
         //binding.numText.text = "3명"
@@ -39,5 +40,6 @@ class StoreReservationActivity : AppCompatActivity() {
             startActivity(Intent(this@StoreReservationActivity,Review::class.java))
 
         }
+
     }
 }

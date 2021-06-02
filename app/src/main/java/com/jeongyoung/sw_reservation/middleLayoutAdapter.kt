@@ -8,14 +8,13 @@ import com.jeongyoung.sw_reservation.databinding.LocalListBinding
 
 class middleLayoutAdapter : RecyclerView.Adapter<middleLayoutAdapter.middleHolder>() {
     val listData = arrayListOf<String>(
-        "경기대",
-        "연무동",
+        "압구정",
+        "강남",
         "신사역",
         "가로수길",
-        "강남",
-        "압구정",
         "홍대",
         "연남동",
+        "연무동",
         "산본",
         "인계동",
         "부산",

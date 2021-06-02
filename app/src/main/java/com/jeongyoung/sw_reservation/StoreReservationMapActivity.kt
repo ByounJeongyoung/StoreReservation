@@ -88,9 +88,9 @@ class StoreReservationMapActivity : AppCompatActivity(), OnMapReadyCallback {
         naverMap.minZoom = 21.0
 
         //시작위치 고도리 위치로 네이버맵으로 경도 초기화
-        val cameraUpdate = CameraUpdate.scrollTo(LatLng(37.29970341392781, 127.04282601032713))
+        val cameraUpdate = CameraUpdate.scrollTo(LatLng(37.297910470330734, 127.04291926296987))
         naverMap.moveCamera(cameraUpdate)
-        marker(37.29970341392781, 127.04282601032713, "고도리")
+        marker(37.297910470330734, 127.04291926296987, "카타르시스")
     }
 
     fun marker(lat: Double, long: Double, storeName: String) {
@@ -101,6 +101,7 @@ class StoreReservationMapActivity : AppCompatActivity(), OnMapReadyCallback {
             icon = MarkerIcons.BLACK
             iconTintColor = Color.RED
             captionText = storeName
+
         }
     }
 }

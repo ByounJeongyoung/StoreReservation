@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         if (currentUser != null) {
-            val id = "student@naver.com"
+            val id = "soft@naver.com"
             if (currentUser.email == id) {
                 startActivity(Intent(this, FragmentActivity::class.java))
             }

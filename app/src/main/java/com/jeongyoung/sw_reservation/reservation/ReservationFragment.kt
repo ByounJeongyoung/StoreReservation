@@ -57,6 +57,7 @@ class ReservationFragment : Fragment(R.layout.fragment_reservation) {
 
         reservationList.clear()
         reservationAdapter = ReservationAdapter(reservationClickedlistener = {
+
         })
 
         articleDB = Firebase.database.reference.child(DB_ARTICLES) //데이터베이스에서 데이터를 읽거나 쓰려면
